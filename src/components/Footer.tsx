@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import NewsletterSignup from "./NewsletterSignup";
 
 const Footer = () => {
   return (
@@ -61,22 +62,27 @@ const Footer = () => {
                 <span>Nairobi, Kenya</span>
               </li>
             </ul>
+            
+            {/* Social Media */}
+            <div className="mt-6">
+              <h4 className="font-semibold mb-4">Follow Us</h4>
+              <div className="flex space-x-4">
+                <a href="#" className="hover:text-accent transition-smooth">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="#" className="hover:text-accent transition-smooth">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="#" className="hover:text-accent transition-smooth">
+                  <Twitter className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Social Media */}
+          {/* Newsletter */}
           <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-smooth">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-smooth">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-smooth">
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
+            <NewsletterSignup />
           </div>
         </div>
 

@@ -14,7 +14,150 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      newsletter_subscribers: {
+        Row: {
+          email: string
+          id: string
+          subscribed_at: string
+        }
+        Insert: {
+          email: string
+          id?: string
+          subscribed_at?: string
+        }
+        Update: {
+          email?: string
+          id?: string
+          subscribed_at?: string
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          delivery_address: string | null
+          id: string
+          mpesa_code: string | null
+          notes: string | null
+          order_items: Json
+          order_status: string | null
+          payment_status: string | null
+          total_amount: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          delivery_address?: string | null
+          id?: string
+          mpesa_code?: string | null
+          notes?: string | null
+          order_items: Json
+          order_status?: string | null
+          payment_status?: string | null
+          total_amount: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          delivery_address?: string | null
+          id?: string
+          mpesa_code?: string | null
+          notes?: string | null
+          order_items?: Json
+          order_status?: string | null
+          payment_status?: string | null
+          total_amount?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          is_featured: boolean | null
+          min_order_quantity: number | null
+          name: string
+          price: number
+          stock_quantity: number | null
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          is_featured?: boolean | null
+          min_order_quantity?: number | null
+          name: string
+          price: number
+          stock_quantity?: number | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          is_featured?: boolean | null
+          min_order_quantity?: number | null
+          name?: string
+          price?: number
+          stock_quantity?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          company_name: string | null
+          created_at: string
+          customer_name: string
+          id: string
+          image_url: string | null
+          is_featured: boolean | null
+          rating: number | null
+          testimonial_text: string
+        }
+        Insert: {
+          company_name?: string | null
+          created_at?: string
+          customer_name: string
+          id?: string
+          image_url?: string | null
+          is_featured?: boolean | null
+          rating?: number | null
+          testimonial_text: string
+        }
+        Update: {
+          company_name?: string | null
+          created_at?: string
+          customer_name?: string
+          id?: string
+          image_url?: string | null
+          is_featured?: boolean | null
+          rating?: number | null
+          testimonial_text?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
