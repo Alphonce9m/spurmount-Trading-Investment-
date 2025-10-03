@@ -16,6 +16,7 @@ interface Product {
   price: number;
   stock_quantity: number;
   is_featured: boolean;
+  image_url: string | null;
 }
 
 const Products = () => {
@@ -127,9 +128,18 @@ const Products = () => {
             {filteredProducts.map((product, index) => (
               <Card 
                 key={product.id} 
-                className="shadow-card hover:shadow-elevated transition-smooth border-border/50 animate-fade-up"
+                className="shadow-card hover:shadow-elevated transition-smooth border-border/50 animate-fade-up overflow-hidden"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
+                {product.image_url && (
+                  <div className="aspect-square w-full overflow-hidden bg-muted">
+                    <img 
+                      src={product.image_url} 
+                      alt={product.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
                 <CardContent className="p-6">
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-2">
